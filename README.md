@@ -30,7 +30,7 @@ Backend Setup
 
    npm install
 
-3. In the Backend directory, Open config/config.json and ensure the development configuration matches your PostgreSQL setup:
+3. In the Backend directory, Open config/config.json and ensure the development configuration matches (username and password) your PostgreSQL setup:
 
 ![image](https://github.com/user-attachments/assets/2fcf3ce2-582b-4b30-97a1-d03250b77024)
 
