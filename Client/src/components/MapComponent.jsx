@@ -99,10 +99,11 @@ const MapComponent = ({ initialAddress, onClose }) => {
         </button>
       </div>
 
-      <div className="relative flex-grow h-[80vh] flex">
-        <div className="flex-grow">
+      <div className="relative flex flex-col md:flex-row h-[80vh]">
+        {/* Map Section */}
+        <div className="flex-grow h-[50vh] md:h-full">
           <MapContainer
-            center={position || [20, 77]} 
+            center={position || [20, 77]}
             zoom={13}
             style={{ height: "100%", width: "100%" }}
           >
@@ -116,7 +117,8 @@ const MapComponent = ({ initialAddress, onClose }) => {
           </MapContainer>
         </div>
 
-        <div className="w-1/3 p-4 overflow-y-auto bg-white">
+        {/* Address Form Section */}
+        <div className="w-full p-4 overflow-y-auto bg-white md:w-1/3">
           <AddressForm onaddress={address} />
         </div>
       </div>
@@ -131,7 +133,8 @@ const MapComponent = ({ initialAddress, onClose }) => {
         </button>
         <div>
           <p className="text-sm ">
-            <strong className="text-red-500">Address:</strong> {address || "Click on the map or locate"}
+            <strong className="text-red-500">Address:</strong>{" "}
+            {address || "Click on the map or locate"}
           </p>
         </div>
       </div>

@@ -18,7 +18,7 @@ const AddressForm = ({ onaddress }) => {
     setSelectedAddressType(type);
   };
 
-  const handleSave = async () => {
+  const handleSave = async (e) => {
     if (selectedAddressType && (houseFlatBlock || apartmentRoadArea)) {
       const addressData = {
         houseFlatBlock,
@@ -49,15 +49,18 @@ const AddressForm = ({ onaddress }) => {
       }
     } else if (onaddress) {
       const addressData = {
-        houseFlatBlock: onaddress, 
+        houseFlatBlockNo: onaddress,
         apartmentRoadArea: "",
-        addressType: selectedAddressType || "Unknown", 
-        country: "India", 
-        userId: user.id, 
+        city:"",
+        state:"",
+        postalCode:"",
+        type: selectedAddressType || "Unknown",
+        country: "",
+        userId: user.id,
       };
 
       try {
-        const response = await fetch("http://yourapi.com/api/addresses", {
+        const response = await fetch("http://localhost:3000/api/addresses", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
