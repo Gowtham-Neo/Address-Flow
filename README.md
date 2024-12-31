@@ -12,7 +12,7 @@ Node.js and npm
 
 PostgreSQL
 
-## Option 2: Running Both Frontend and Backend Locally
+Running Both Frontend and Backend Locally
 
 1. Clone the repository:
 
